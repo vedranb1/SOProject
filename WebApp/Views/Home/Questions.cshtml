@@ -1,0 +1,49 @@
+﻿@model List<StackOverflowProject.ViewModels.QuestionViewModel>
+@using Microsoft.AspNetCore.Http;
+@inject IHttpContextAccessor HttpContextAccessor
+<!DOCTYPE html>
+@{
+    ViewBag.Title = "Questions";
+}
+
+<div class="row">
+    <div class="col-sm-12">
+        <table class="table">
+            @foreach (var item in Model)
+            {
+            <tr>
+                <td><span class="badge badge-secondary">@item.VotesCount</span></td>
+                <td><span class="badge badge-secondary">@item.AnswersCount</span></td>
+                <td><span class="badge badge-secondary">@item.ViewsCount</span></td>
+                <td class="text-dark">
+                    <a href="/questions/view/@item.QuestionID" class="text-primary">@item.QuestionName</a>
+                    <br>
+                    <span class="badge badge-secondary">@item.Category.CategoryName</span>
+                </td>
+                <td>
+                    @if (HttpContextAccessor.HttpContext.Session.GetInt32("CurrentUserID") != item.UserID)
+                    {
+                        @:by @item.User.Username
+                    }
+                    else
+                    {
+                        @:by you
+                    }
+                </td>
+                <td>@item.User.Username</td>
+                <td>@item.QuestionDateAndTime</td>
+            </tr>
+            }
+        </table>
+        @if (HttpContextAccessor.HttpContext.Session.GetString("CurrentUsername") != null)
+        {
+            <a href="/questions/create" class="btn btn-primary">Add Question</a>
+        }
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function (e) {
+        $("a[href='/home/allquestions']").attr("id", "active");
+    })
+</script>

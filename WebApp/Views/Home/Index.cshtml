@@ -1,0 +1,70 @@
+﻿@model List<StackOverflowProject.ViewModels.QuestionViewModel>
+@using Microsoft.AspNetCore.Http;
+@inject IHttpContextAccessor HttpContextAccessor
+<!DOCTYPE html>
+@{
+    ViewBag.Title = "Home";
+}
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title - StackOverflow</title>
+    @*@Styles.Render("~/Styles/bootstrap")
+        @Styles.Render("~/Styles/site")
+        @Styles.Render("~/Scripts/Bootstrap")*@
+</head>
+<body>
+    <div>
+        <div class="row">
+            <div class="col-sm-12">
+                <h1>Learn, Share, Build!</h1>
+                <h3>Each month, over 50 million developers come to Stack Overflow to learn, share their knowledge, and build their careers.</h3>
+                <p class="lead">Join the world's largest developer community.</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <table class="table">
+                    @foreach (var item in Model)
+                    {
+                    <tr>
+                        <td><span class="badge badge-secondary">@item.VotesCount</span></td>
+                        <td><span class="badge badge-secondary">@item.AnswersCount</span></td>
+                        <td><span class="badge badge-secondary">@item.ViewsCount</span></td>
+                        <td class="text-dark">
+                            <a href="/questions/view/@item.QuestionID" class="text-primary">@item.QuestionName</a>
+                            <br>
+                            <span class="badge badge-secondary">@*@item.Category.CategoryName*@</span>
+                        </td>
+                        <td>
+                            @if (HttpContextAccessor.HttpContext.Session.GetInt32("CurrentUserID") != item.UserID)
+                            {
+                                @:by @* @item.User.Username *@
+                            }
+                            else
+                            {
+                                @:by you
+                            }
+                        </td>
+                        <td>@*item.User.Username*@</td>
+                        <td>@item.QuestionDateAndTime</td>
+                    </tr>
+                    }
+                </table>
+                @if (HttpContextAccessor.HttpContext.Session.GetString("CurrentUserName") != null)
+                {
+                    <a href="/questions/create" class="btn btn-primary">Add Question</a>
+                }
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function (e) {
+        $("a[href='/home/index']").attr("id", "active");
+    })
+</script>

@@ -1,0 +1,80 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Remove="wwwroot\lib\bootstrap\dist\css\Styles.css" />
+    <Content Remove="wwwroot\lib\bootstrap\dist\js\jquery-3.6.0.intellisense.js" />
+    <Content Remove="wwwroot\lib\bootstrap\dist\js\jquery-3.6.0.js" />
+    <Content Remove="wwwroot\lib\bootstrap\dist\js\jquery-3.6.0.min.js" />
+    <Content Remove="wwwroot\lib\bootstrap\dist\js\jquery-3.6.0.min.map" />
+    <Content Remove="wwwroot\lib\bootstrap\dist\js\jquery-3.6.0.slim.js" />
+    <Content Remove="wwwroot\lib\bootstrap\dist\js\jquery-3.6.0.slim.min.js" />
+    <Content Remove="wwwroot\lib\bootstrap\dist\js\jquery-3.6.0.slim.min.map" />
+    <Content Remove="wwwroot\lib\bootstrap\dist\js\umd\popper-utils.js" />
+    <Content Remove="wwwroot\lib\bootstrap\dist\js\umd\popper-utils.js.map" />
+    <Content Remove="wwwroot\lib\bootstrap\dist\js\umd\popper-utils.min.js" />
+    <Content Remove="wwwroot\lib\bootstrap\dist\js\umd\popper-utils.min.js.map" />
+    <Content Remove="wwwroot\lib\bootstrap\dist\js\umd\popper.js" />
+    <Content Remove="wwwroot\lib\bootstrap\dist\js\umd\popper.js.flow" />
+    <Content Remove="wwwroot\lib\bootstrap\dist\js\umd\popper.js.map" />
+    <Content Remove="wwwroot\lib\bootstrap\dist\js\umd\popper.min.js" />
+    <Content Remove="wwwroot\lib\bootstrap\dist\js\umd\popper.min.js.map" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="bootstrap" Version="5.1.2" />
+    <PackageReference Include="Microsoft.AspNet.Web.Optimization" Version="1.1.3" />
+    <PackageReference Include="Microsoft.AspNet.WebApi.Core" Version="5.2.7" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.Negotiate" Version="3.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.12">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.5" />
+    <PackageReference Include="MySql.EntityFrameworkCore" Version="5.0.8" />
+    <PackageReference Include="Unity" Version="5.11.10" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SOProject.DomainModels2\SOProject.DomainModels.csproj" />
+    <ProjectReference Include="..\SOProject.ServiceLayer\SOProject.ServiceLayer.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Data\" />
+    <Folder Include="Models\" />
+    <Folder Include="Pages\" />
+    <Folder Include="wwwroot\css\" />
+    <Folder Include="wwwroot\images\" />
+    <Folder Include="wwwroot\js\" />
+    <Folder Include="wwwroot\lib\jquery-validation-unobtrusive\" />
+    <Folder Include="wwwroot\lib\jquery-validation\" />
+    <Folder Include="wwwroot\lib\jquery-validation\dist\" />
+    <Folder Include="wwwroot\lib\jquery\" />
+    <Folder Include="wwwroot\lib\jquery\dist\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\lib\bootstrap\dist\css\Styles.css" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\jquery-3.6.0.intellisense.js" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\jquery-3.6.0.js" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\jquery-3.6.0.min.js" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\jquery-3.6.0.min.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\jquery-3.6.0.slim.js" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\jquery-3.6.0.slim.min.js" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\jquery-3.6.0.slim.min.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\umd\popper-utils.js" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\umd\popper-utils.js.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\umd\popper-utils.min.js" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\umd\popper-utils.min.js.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\umd\popper.js" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\umd\popper.js.flow" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\umd\popper.js.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\umd\popper.min.js" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\umd\popper.min.js.map" />
+  </ItemGroup>
+
+</Project>

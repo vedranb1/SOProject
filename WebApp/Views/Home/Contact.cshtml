@@ -1,0 +1,60 @@
+﻿
+@{
+    ViewBag.Title = "Contact";
+}
+<div class="row">
+    <div class="col-sm-6">
+        <div class="card">
+            <div class="card-header bg-light">Teams</div>
+            <div class="card-body">
+                <p>
+                    A private, secure home for your team's questions and answers. Perfect for teams of 10-500 members. No more digging through
+                    stale wikis and lost emails - give your team back the time it needs to build better products.
+                </p>
+                <a href="#">Learn more</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-sn-6">
+        <div class="card">
+            <div class="card-header bg-light">Enterprise</div>
+            <div class="card-body">
+                <p>
+                    Stack Overflow for Enterprise is a private, secure home for your organization's questions and answers. Empower your
+                    teams to find and share information without disrupting their workflows.
+                </p>
+                <a href="#">Learn more</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="card">
+            <div class="card-header bg-light">Our Partners</div>
+            <div class="card-body">
+                Stack Overflow partners with businesses to help them understannd, hire, engage, and enable the world's developers. Our
+                products and services are focused on developer marketing, technical recruiting, market research, and enterprise knowledge
+                sharing. Learn more about our business solutions here.
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <div class="card">
+            <div class="card-header bg-light">Stack Overflow Offices</div>
+            <img class="card-img-top" src="~/Images/map.svg" alt="Offices" />
+            <div class="card-body">
+                Stack Overflow currently employs more than 250 people in its head offices in New York, London and Munich as well as remote
+                workers from Israel, Brazil, Japan, Germany, Slovenia, Spain, Poland, France, Russia, Canada, the UK and the United States.
+                The company is committed to diversity in the workplace and is currently hiring.
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function (e) {
+        $("a[href='/home/contact']").attr("id", "active");
+    })
+</script>
